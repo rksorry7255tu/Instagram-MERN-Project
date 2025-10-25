@@ -1,1 +1,1 @@
-export const MONGODB_NAME = "InstaRevision";
+export const MONGO_NAME = "INSTAREVISION";
