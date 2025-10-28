@@ -65,7 +65,7 @@ const login = async (req, res) => {
       process.env.SECRET_KEY,
       {
         expiresIn: "1d",
-      }
+      },
     );
 
     const populatedPosts = await Promise.all(
@@ -75,7 +75,7 @@ const login = async (req, res) => {
           return post;
         }
         return null;
-      })
+      }),
     );
 
     user = {
@@ -187,7 +187,7 @@ const editProfile = async (req, res) => {
 const suggestedUsers = async (req, res) => {
   try {
     const suggestedUsers = await User.find({ _id: { $ne: req.id } }).select(
-      "-password"
+      "-password",
     );
     if (!suggestedUsers) {
       return res.status(401).json({
@@ -231,11 +231,11 @@ const followOrUnfollow = async (req, res) => {
       await Promise.all([
         User.updateOne(
           { _id: followkarneWala },
-          { $pull: { following: jiskoFollowKiya } }
+          { $pull: { following: jiskoFollowKiya } },
         ),
         User.updateOne(
           { _id: jiskoFollowKiya },
-          { $pull: { followers: followkarneWala } }
+          { $pull: { followers: followkarneWala } },
         ),
       ]);
       return res.status(200).json({
@@ -247,11 +247,11 @@ const followOrUnfollow = async (req, res) => {
       await Promise.all([
         User.updateOne(
           { _id: followkarneWala },
-          { $push: { following: jiskoFollowKiya } }
+          { $push: { following: jiskoFollowKiya } },
         ),
         User.updateOne(
           { _id: jiskoFollowKiya },
-          { $push: { followers: followkarneWala } }
+          { $push: { followers: followkarneWala } },
         ),
       ]);
       return res.status(200).json({
