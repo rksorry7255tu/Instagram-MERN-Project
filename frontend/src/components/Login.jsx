@@ -3,11 +3,11 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Button } from "./ui/button";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const Login = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -33,7 +33,7 @@ const Login = () => {
 
       if (res.data.success) {
         toast.success(res.data.message);
-        // navigate("/");
+        navigate("/");
         setInput({
           email: "",
           password: "",

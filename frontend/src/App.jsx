@@ -7,6 +7,31 @@ import Signup from "./components/Signup";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
+  // const browserRoute = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <MainLayout />,
+  //     children: [
+  //       {
+  //         path: "/",
+  //         element: <Home />,
+  //       },
+  //       {
+  //         path: "/profile",
+  //         element: <Profile />,
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     path: "/login",
+  //     element: <Login />,
+  //   },
+  //   {
+  //     path: "/signup",
+  //     element: <Signup />,
+  //   },
+  // ]);
+
   const browserRoute = createBrowserRouter([
     {
       path: "/",
@@ -27,10 +52,11 @@ function App() {
       element: <Login />,
     },
     {
-      path: "/signup",
+      path: "/register",
       element: <Signup />,
     },
   ]);
+
   return (
     <>
       <RouterProvider router={browserRoute} />
