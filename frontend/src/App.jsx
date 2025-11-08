@@ -45,6 +45,9 @@ function App() {
           path: "/profile",
           element: <Profile />,
         },
+        {
+          path:""
+        }
       ],
     },
     {

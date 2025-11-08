@@ -40,6 +40,8 @@ const LeftSideBar = () => {
       logoutHandler();
     } else if (textType === "Create") {
       setOpen(true);
+    } else if (textType == "Explore") {
+      navigate("");
     }
   };
 
@@ -70,7 +72,7 @@ const LeftSideBar = () => {
     },
     {
       icon: (
-        <Avatar>
+        <Avatar className="w-6 h-6">
           <AvatarImage src="https://github.com/shadcn.png" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
@@ -102,7 +104,7 @@ const LeftSideBar = () => {
           <span className="hover:bg-gray-200 rounded p-2">Also from Meta</span>
         </div>
       </div>
-      <CreatePost open={open} setOpen={setOpen} />
+      {/* <CreatePost open={open} setOpen={setOpen} /> */}
     </div>
   );
 };
